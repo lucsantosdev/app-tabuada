@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tabuada Interativa - Aprender e Praticar</title>
+  <!-- <title>SuperTab</title> -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="tag">Aprendizado para casa e escola</p>
+      <h1>Tabuada Interativa</h1>
+      <p class="subtitle">Pratique com desafios, veja seu progresso e aprenda com dicas simples.</p>
+      <a class="hero-button" href="#pratica">Começar a praticar</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="audiencia" aria-label="Público da plataforma">
+      <h2>Feito para todos</h2>
+      <div class="audiencia-grid">
+        <article>
+          <h3>Alunos e crianças</h3>
+          <p>Aprendem brincando com desafios e feedback imediato.</p>
+        </article>
+        <article>
+          <h3>Pais</h3>
+          <p>Acompanham pontos, acertos e tempo de estudo em casa.</p>
+        </article>
+        <article>
+          <h3>Professores</h3>
+          <p>Usam a prática guiada para reforço em aula e tarefa.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="painel-aprendizado" aria-label="Seção de aprendizado">
+      <div class="box">
+        <h2>Gerador de tabuada</h2>
+        <p>Escolha um número de 1 a 12 para estudar e revisar padrões.</p>
+        <div class="form-inline">
+          <label for="numeroTabuada">Número:</label>
+          <input id="numeroTabuada" type="number" min="1" max="12" value="5" />
+          <button id="btnGerar" type="button">Gerar tabuada</button>
+        </div>
+        <ul id="resultadoTabuada" class="resultado-lista" aria-live="polite"></ul>
+      </div>
+
+      <aside class="box dicas">
+        <h2>Dicas de aprendizado</h2>
+        <ul>
+          <li>Comece do fácil para o difícil: 2, 5 e 10.</li>
+          <li>Repita por blocos curtos de 10 minutos.</li>
+          <li>Fale os resultados em voz alta para memorizar.</li>
+          <li>Revise os erros no fim de cada rodada.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="pratica" class="box pratica" aria-label="Seção de prática">
+      <h2>Desafio rápido de multiplicação</h2>
+      <p class="descricao">Responda as contas e acompanhe seus resultados em tempo real.</p>
+
+      <div class="controles-desafio">
+        <label for="nivel">Nível:</label>
+        <select id="nivel">
+          <option value="facil">Fácil (1 a 5)</option>
+          <option value="medio" selected>Médio (1 a 10)</option>
+          <option value="dificil">Difícil (1 a 12)</option>
+        </select>
+        <button id="btnNova" type="button">Nova pergunta</button>
+      </div>
+
+      <p id="pergunta" class="pergunta" aria-live="polite">-- × -- = ?</p>
+
+      <div class="resposta-area">
+        <input id="resposta" type="number" placeholder="Sua resposta" />
+        <button id="btnVerificar" type="button">Verificar</button>
+      </div>
+
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+
+      <div class="placar" aria-label="Indicadores de desempenho">
+        <span>Acertos: <strong id="acertos">0</strong></span>
+        <span>Erros: <strong id="erros">0</strong></span>
+        <span>Pontuação: <strong id="pontos">0</strong></span>
+        <span>Taxa de acerto: <strong id="taxa">0%</strong></span>
+      </div>
+    </section>
+
+    <section id="professor" class="box professor" aria-label="Modo professor para impressão">
+      <h2>Modo Professor - Folha de Exercícios</h2>
+      <p class="descricao">Gere uma atividade pronta para sala de aula ou tarefa de casa e imprima em PDF.</p>
+
+      <div class="controles-professor">
+        <label for="qtdQuestoes">Quantidade:</label>
+        <input id="qtdQuestoes" type="number" min="6" max="60" step="1" value="20" />
+
+        <label for="nivelFolha">Nível:</label>
+        <select id="nivelFolha">
+          <option value="facil">Fácil (1 a 5)</option>
+          <option value="medio" selected>Médio (1 a 10)</option>
+          <option value="dificil">Difícil (1 a 12)</option>
+        </select>
+
+        <label class="check-inline" for="mostrarGabarito">
+          <input id="mostrarGabarito" type="checkbox" />
+          Mostrar gabarito
+        </label>
+      </div>
+
+      <div class="acoes-professor">
+        <button id="btnGerarFolha" type="button">Gerar lista</button>
+        <button id="btnImprimirFolha" type="button">Imprimir / Salvar PDF</button>
+      </div>
+
+      <article id="folhaImpressao" class="folha-impressao" aria-live="polite">
+        <header class="folha-topo">
+          <h3>Atividade de Tabuada</h3>
+          <p>Nome: ____________________  Turma: __________  Data: ____/____/______</p>
+        </header>
+        <ol id="listaExercicios" class="lista-exercicios"></ol>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Tabuada Interativa • Educação para alunos, famílias e escolas • © 2026</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

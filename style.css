@@ -1,0 +1,315 @@
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --secondary: #06b6d4;
+  --accent: #f59e0b;
+  --success: #15803d;
+  --danger: #b91c1c;
+  --bg: #f1f5f9;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --radius: 16px;
+  --shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 60%);
+  color: var(--text);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  background: radial-gradient(circle at top right, #22d3ee 0%, var(--primary) 42%, var(--primary-dark) 100%);
+  color: white;
+  padding: 3.5rem 0 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+}
+
+.subtitle {
+  margin: 0.8rem 0 1.3rem;
+  max-width: 700px;
+  font-size: 1.05rem;
+}
+
+.hero-button {
+  display: inline-block;
+  color: var(--primary-dark);
+  background: #fef9c3;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+}
+
+main {
+  padding-bottom: 2rem;
+}
+
+.audiencia,
+.painel-aprendizado,
+.pratica {
+  margin: 1.2rem 0;
+}
+
+.audiencia-grid,
+.painel-aprendizado {
+  display: grid;
+  gap: 1rem;
+}
+
+.audiencia-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.box,
+.audiencia article {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.audiencia h2,
+.painel-aprendizado h2,
+.pratica h2 {
+  margin-top: 0;
+}
+
+.form-inline,
+.controles-desafio,
+.resposta-area,
+.controles-professor,
+.acoes-professor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.check-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-left: 0.35rem;
+}
+
+.check-inline input {
+  width: 1rem;
+  height: 1rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select,
+button {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+.resultado-lista {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  columns: 2;
+}
+
+.resultado-lista li {
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.dicas ul {
+  padding-left: 1rem;
+  margin: 0.5rem 0 0;
+}
+
+.dicas li {
+  margin-bottom: 0.6rem;
+}
+
+.descricao {
+  color: var(--muted);
+  margin-top: -0.2rem;
+}
+
+.pergunta {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  margin: 1rem 0;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.feedback {
+  min-height: 1.6rem;
+  font-weight: 700;
+}
+
+.feedback.ok {
+  color: var(--success);
+}
+
+.feedback.erro {
+  color: var(--danger);
+}
+
+.placar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.placar span {
+  background: #eff6ff;
+  border-radius: 10px;
+  padding: 0.7rem;
+  font-weight: 600;
+}
+
+.acoes-professor {
+  margin: 0.8rem 0 1rem;
+}
+
+.folha-impressao {
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 1rem;
+}
+
+.folha-topo h3 {
+  margin: 0;
+}
+
+.folha-topo p {
+  margin: 0.5rem 0 1rem;
+  color: var(--muted);
+}
+
+.lista-exercicios {
+  margin: 0;
+  padding-left: 1.4rem;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.lista-exercicios li {
+  margin-bottom: 0.5rem;
+  break-inside: avoid;
+}
+
+.gabarito {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 1.4rem 1rem 2.4rem;
+}
+
+@media (max-width: 720px) {
+  .resultado-lista {
+    columns: 1;
+  }
+
+  .lista-exercicios {
+    columns: 1;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .hero,
+  .audiencia,
+  .painel-aprendizado,
+  .pratica,
+  .acoes-professor,
+  .controles-professor,
+  footer {
+    display: none !important;
+  }
+
+  main.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .professor {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+  }
+
+  .professor h2,
+  .professor .descricao {
+    display: none;
+  }
+
+  .folha-impressao {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+  }
+}
